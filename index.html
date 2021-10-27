@@ -126,7 +126,7 @@
             <h4>
                 Developed in two weeks, Shallow Be Thy Graves is a game that can be described as a rougeulike, soulslike,
                 COD Zombies clone. It was written in a Python-like language called GDScript on top of the Godot game engine.
-                The game is currently being rewritten and expanded on under the moniker" 
+                The game is currently being rewritten and expanded on under the moniker " 
                 <a href="http://www.shallowbethygrave.com/">Shallow Be Thy Grave</a>"
             </h4>
         </template>
@@ -159,25 +159,21 @@
     })();
 
     function galleryRight() {
-        $(".gallery").css("height", $(".gallery").height())
         $(".spotlight").css("opacity", 0)
         window.setTimeout(() => {
             projectIndex = projectIndex + 1 > projects.length - 1 ? 0 : projectIndex + 1
             $(".spotlight").html(projects[projectIndex].innerHTML)
-            $(".gallery").css("height", "auto");
             $(".spotlight").css("opacity", 1)
-        }, 1000) 
+        }, 1200) 
     }
 
     function galleryLeft() {
-        $(".gallery").css("height", $(".gallery").height())
         $(".spotlight").css("opacity", 0)
         window.setTimeout(() => {
             projectIndex = projectIndex - 1 < 0 ? projects.length - 1 : projectIndex - 1
             $(".spotlight").html(projects[projectIndex].innerHTML)
-            $(".gallery").css("height", "auto");
             $(".spotlight").css("opacity", 1)
-        }, 1000) 
+        }, 1200) 
     }
 
     function homeToAbout() {

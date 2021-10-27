@@ -1,0 +1,292 @@
+body,
+html {
+    font-family: Arail, sans-serif;
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    color: #333333;
+    background-color: #E5E5E5;
+}
+
+body {
+    display: flex;
+    width: 300vw;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+}
+
+.page-layout {
+    display: flex;
+    width: 100vw;
+    transition: 1s;
+}
+
+.page-section {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    transition: 1s;
+    background-color: white;
+}
+
+.name {
+    opacity: 0;
+    margin-top: 0;
+    white-space: nowrap;
+    font-size: 4rem;
+    transition: 1s;
+}
+
+.on-page-load {
+    opacity: 1;
+    margin-top: 40vh;
+}
+
+.after-drop {
+    transition: 0.3s;
+}
+
+.side-button {
+    display: flex;
+    background-color: #E5E5E5;
+    width: 2rem;
+    transition: 0.5s;
+    box-shadow: 0 0 8px 4px #E5E5E5;
+    cursor: pointer;
+}
+.side-button.left {
+    justify-content: flex-end;
+}
+.side-button.right {
+    justify-content: flex-start;
+}
+.side-button:hover {
+    background-color: #BFBFBF;
+    box-shadow: 0 0 8px 4px #BFBFBF;
+    width: 9rem;
+}
+
+.side-button:hover .arrow {
+    transform: scale(-0.5, 0.5);
+    opacity: 25%
+}
+
+.side-button:hover>div {
+    width: 100%;
+}
+
+.side-button>div {
+    display: flex;
+    margin-top: 45vh;
+}
+
+.side-button.right>div {
+    justify-content: flex-start;
+}
+
+.side-button.left>div {
+    justify-content: flex-end;
+}
+
+.arrow {
+    opacity: 18%;
+    transition: 0.4s;
+    width: 0;
+    height: 0;
+    z-index: 2;
+}
+
+.arrow.right {
+    border-top: 2rem solid transparent;
+    border-bottom: 2rem solid transparent;
+    border-left: 2.1rem solid gray;
+
+}
+
+.arrow.left {
+    border-top: 2rem solid transparent;
+    border-bottom: 2rem solid transparent;
+    border-right: 2.1rem solid gray;
+}
+
+.utoledo {
+    height: auto;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    border-radius: 3px;
+    box-shadow: 0 0 12px -6px black;
+}
+
+.soc-icon {
+    height: 2rem;
+    width: 2rem;
+    transition: 0.3s;
+}
+
+.soc-icon:hover {
+    transform: scale(1.2, 1.2)
+}
+
+.textbox {
+    box-shadow: 0 0 12px -6px black;
+    background-color:#E5E5E5;
+    border-radius: 1px;
+    padding: 10px;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    line-height: 170%;
+}
+
+#about-me {
+    transform: translateX(-100%);
+}
+
+#home {
+    transform: translateX(-100%);
+}
+
+#projects {
+    transform: translateX(-100%)
+}
+
+.spotlight {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    transition: 1s;
+}
+
+.spotlight > img {
+    border-radius: 4px;
+    height: auto;
+    width: 40vw;
+}
+
+.spotlight > video {
+    border-radius: 4px;
+    height: auto;
+    width: 40vw;
+}
+
+.spotlight h3 {
+    margin: 0;
+    text-align: left;
+}
+
+.spotlight h4 {
+    text-align: left;
+}
+
+.gallery {
+    display: flex; 
+    justify-content: space-between; 
+    width: 90%; 
+    margin-right: auto; 
+    margin-left: auto;
+    transition: 0.3s;
+}
+
+.gallery .arrow {
+    place-self: center;
+}
+
+.gallery .arrow.left:hover {
+    border-right: 2.1rem solid #0d0d0d;
+}
+
+.gallery .arrow.right:hover {
+    border-left: 2.1rem solid #0d0d0d;
+}
+
+@media only screen and (max-width: 720px) {
+    .name {
+        font-size: 2.3rem;
+    }
+
+    .gallery {
+        height: 98%;
+        gap: 1rem;
+    }
+
+    .gallery .arrow.right {
+        border-top: 1rem solid transparent;
+        border-bottom: 1rem solid transparent;
+        border-left: 1.1rem solid gray;
+    }
+    
+    .gallery .arrow.left {
+        border-top: 1rem solid transparent;
+        border-bottom: 1rem solid transparent;
+        border-right: 1.1rem solid gray;
+    }
+
+    .gallery .arrow.left:hover {
+        border-right: 1.1rem solid #0d0d0d;
+    }
+    
+    .gallery .arrow.right:hover {
+        border-left: 1.1rem solid #0d0d0d;
+    }
+
+    .spotlight > img {
+        width: 100%;
+    }
+    
+    .spotlight > video {
+        width: 100%;
+    }
+
+    #project-title {
+        display: none;
+    }
+
+    .spotlight {
+        width: auto;
+        height: 100%;
+    }
+
+    .spotlight h4 {
+        max-height: 90%;
+        width: 100%;
+        overflow-y: scroll;
+        font-size: 90%;
+        margin-top: 1px;
+        margin-bottom: 0;
+    }
+
+    .textbox {
+        line-height: 150%;
+    }
+}
+
+/* @media only screen and (max-width: 400px) {
+    .name {
+        font-size: 2.3rem;
+    }
+
+    .side-button {
+        display: none;
+    }
+
+    body {
+        flex-direction: column;
+    }
+
+    #about-me {
+        transform: translateX(0)
+    }
+
+    #projects {
+        transform: translateX(0)
+    }
+}  */
+

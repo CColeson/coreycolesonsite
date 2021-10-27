@@ -8,178 +8,11 @@
     <title>Corey Coleson</title>
     <meta name="viewport" content="user-scalable=0, width=device-width, initial-scale=1.0" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="stylesheet" href="site.css">
 </head>
 
-<style>
-    body,
-    html {
-        font-family: Arail, sans-serif;
-        height: 100%;
-        margin: 0;
-        overflow-x: hidden;
-        color: #333333;
-        background-color: #E5E5E5;
-    }
-
-    body {
-        display: flex;
-        width: 300vw;
-        position: relative;
-    }
-
-    h1 {
-        text-align: center;
-        margin: 0;
-    }
-
-    .page-layout {
-        display: flex;
-        width: 100vw;
-        transition: 1s;
-    }
-
-    .page-section {
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-        width: 100%;
-        text-align: center;
-        transition: 1s;
-        background-color: white;
-    }
-
-    .name {
-        opacity: 0;
-        margin-top: 0;
-        white-space: nowrap;
-        font-size: 4rem;
-        transition: 1s;
-    }
-
-    .on-page-load {
-        opacity: 1;
-        margin-top: 40vh;
-    }
-
-    .after-drop {
-        transition: 0.3s;
-    }
-
-    .side-button {
-        display: flex;
-        background-color: #E5E5E5;
-        width: 2rem;
-        transition: 0.5s;
-        box-shadow: 0 0 8px 4px #E5E5E5;
-        cursor: pointer;
-    }
-    .side-button.left {
-        justify-content: flex-end;
-    }
-    .side-button.right {
-        justify-content: flex-start;
-    }
-    .side-button:hover {
-        background-color: #BFBFBF;
-        box-shadow: 0 0 8px 4px #BFBFBF;
-        width: 9rem;
-    }
-
-    .side-button:hover .arrow {
-        transform: scale(-0.5, 0.5);
-        opacity: 25%
-    }
-
-    .side-button:hover>div {
-        width: 100%;
-    }
-
-    .side-button>div {
-        display: flex;
-        margin-top: 45vh;
-    }
-
-    .side-button.right>div {
-        justify-content: flex-start;
-    }
-
-    .side-button.left>div {
-        justify-content: flex-end;
-    }
-
-    .arrow {
-        opacity: 18%;
-        transition: 0.4s;
-        width: 0;
-        height: 0;
-        z-index: 2;
-    }
-
-    .arrow.up {
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-bottom: 5px solid gray;
-    }
-
-    .arrow.down {
-        border-left: 30px solid transparent;
-        border-right: 30px solid transparent;
-        border-top: 32px solid gray;
-    }
-
-    .arrow.right {
-        border-top: 2rem solid transparent;
-        border-bottom: 2rem solid transparent;
-        border-left: 2.1rem solid gray;
-
-    }
-
-    .arrow.left {
-        border-top: 2rem solid transparent;
-        border-bottom: 2rem solid transparent;
-        border-right: 2.1rem solid gray;
-    }
-
-    .utoledo {
-        height: auto;
-        max-width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 5%;
-        border-radius: 3px;
-        box-shadow: 0 0 12px -6px black;
-    }
-
-    .soc-icon {
-        height: 2rem;
-        width: 2rem;
-        transition: 0.3s;
-    }
-
-    .soc-icon:hover {
-        transform: scale(1.2, 1.2)
-    }
-
-    .textbox {
-        box-shadow: 0 0 12px -6px black;
-        background-color:#E5E5E5;
-        border-radius: 1px;
-        padding: 10px;
-        font-weight: bold;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-        line-height: 170%;
-    }
-
-    @media only screen and (max-width: 720px) {
-        .name {
-            font-size: 2.3rem;
-        }
-    }
-</style>
-
 <body>
-    <div class="page-layout" id="about-me" style="transform: translateX(-100%)">
+    <div class="page-layout" id="about-me">
         <div class="page-section" style="justify-content: center; text-align: center">
             <h1>Hi, I'm Corey</h1>
             <div class="textbox" style="width: 90%; margin-right: auto; margin-left: auto;">
@@ -203,7 +36,7 @@
     </div>
 
 
-    <div class="page-layout" id="home" style="transform: translateX(-100%)">
+    <div class="page-layout" id="home">
         <div class="side-button left" onclick="homeToAbout()">
             <div>
                 <h4 class="js-button-text" style="white-space: nowrap;">About Me</h4>
@@ -229,6 +62,7 @@
                 </div>
             </div>
             <h4 style="margin-bottom: 3rem;" id="navigation-text">To navigate: Click the left, or right edges of the page!<!-- Otherwise, just scroll!--></h4>
+
         </div>
 
         <div class="side-button right" onclick="homeToProjects()">
@@ -239,7 +73,7 @@
         </div>
     </div>
 
-    <div class="page-layout" id="projects" style="transform: translateX(-100%)">
+    <div class="page-layout" id="projects">
         <div class="side-button left" onclick="projectsToHome()">
             <div>
                 <h4 class="js-button-text" style="white-space: nowrap; display: none;">Home</h4>
@@ -248,12 +82,56 @@
         </div>
 
         <div class="page-section" style="justify-content: center; text-align: center">
-            <h1>Here's some cool projects I've done</h1>
-            <div class="textbox" style="width: 90%; margin-right: auto; margin-left: auto;">
-                Under construction! Sorry about that ;) In the meantime, check out my <a href="https://github.com/CColeson" target="_blank" rel="noopener noreferrer">Github!</a>
+            <h1 id="project-title">Here's some cool projects I've done</h1>
+            <div class="textbox gallery">
+                <div class="arrow left" onclick="galleryLeft()"></div>
+                <div class="spotlight"></div>
+                <div class="arrow right" onclick="galleryRight()"></div>
             </div>
         </div>
-    </div> 
+    </div>
+
+    <div id="project-templates" hidden>
+    
+        <template>
+            <img src="images/projects/bartha.jpg" />
+            <div style="display: flex; justify-content: space-between;">
+                <h3>Is My Hamster Running?</h3>
+                <a href="https://github.com/CColeson/IsMyHamsterRunning" target="_blank" rel="noopener noreferrer">
+                    <img src="images/icons/github.svg" height="24" width="24" alt="github">
+                </a>
+            </div>
+            <h4>For months I heard my hamster, Bartha, running on her wheel for hours on end.
+                This formed a myriad of questions in my mind: How fast does she run? How far does she run?
+                What times does she run? I decided to take action. Using a reed hall switch, a magnet, and an arduino
+                I was able to count the amount of revolutions she makes and calculate distance, velocity, and raw power
+                output of my hamster! She ran on average 3 MPH for 5-7 miles a night.
+            </h4>
+        </template>
+
+        <template>
+            <!-- <img src="images/projects/shallow.png" /> -->
+            <video src="videos/sbtg.mp4" muted loop autoplay></video>
+            <div style="display: flex; justify-content: space-between;">
+                <h3>Shallow Be Thy Graves</h3>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="https://github.com/CColeson/ShallowBeThyGraves" target="_blank" rel="noopener noreferrer">
+                        <img src="images/icons/github.svg" height="24" width="24" alt="github">
+                    </a>
+                    <a href="https://freshouttathebag.itch.io/shallow-be-thy-graves" target="_blank" rel="noopener noreferrer">
+                        <img src="images/icons/globe.svg" height="24" width="24" alt="github">
+                    </a>
+                </div>
+            </div>
+            <h4>
+                Developed in two weeks, Shallow Be Thy Graves is a game that can be described as a rougeulike, soulslike,
+                COD Zombies clone. It was written in a Python-like language called GDScript on top of the Godot game engine.
+                The game is currently being rewritten and expanded on under the moniker" 
+                <a href="http://www.shallowbethygrave.com/">Shallow Be Thy Grave</a>"
+            </h4>
+        </template>
+
+    </div>
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -262,6 +140,9 @@
 </html>
 
 <script>
+
+    let projects;
+    let projectIndex;
     (() => {
         const name = document.querySelector(".name")
         window.setTimeout(() => {
@@ -271,7 +152,33 @@
         window.setTimeout(() => {
             name.classList += " after-drop"
         }, 1200)
+
+        projects = document.querySelectorAll("#project-templates template")
+        projectIndex = Math.floor(Math.random() * projects.length)
+        $(".spotlight").append(projects[projectIndex].innerHTML)
     })();
+
+    function galleryRight() {
+        $(".gallery").css("height", $(".gallery").height())
+        $(".spotlight").css("opacity", 0)
+        window.setTimeout(() => {
+            projectIndex = projectIndex + 1 > projects.length - 1 ? 0 : projectIndex + 1
+            $(".spotlight").html(projects[projectIndex].innerHTML)
+            $(".gallery").css("height", "auto");
+            $(".spotlight").css("opacity", 1)
+        }, 1000) 
+    }
+
+    function galleryLeft() {
+        $(".gallery").css("height", $(".gallery").height())
+        $(".spotlight").css("opacity", 0)
+        window.setTimeout(() => {
+            projectIndex = projectIndex - 1 < 0 ? projects.length - 1 : projectIndex - 1
+            $(".spotlight").html(projects[projectIndex].innerHTML)
+            $(".gallery").css("height", "auto");
+            $(".spotlight").css("opacity", 1)
+        }, 1000) 
+    }
 
     function homeToAbout() {
         $("#home").css("transform", "translateX(100\%")

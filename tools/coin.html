@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/site.css">
+    <link rel="stylesheet" href="../styles/tools.css">
+    <title>Flip a coin!</title>
+</head>
+<body>
+    <h1 id="coin">Press the button to flip!</h1>
+    <span class="tool-card" onclick="flip();" style="width: 10%; margin-top: 1rem; text-align: center;">Flip a coin</span>
+</body>
+<script>
+    function flip() {
+        let coin = document.getElementById("coin")
+        coin.style = "opacity: 0"
+        window.setTimeout(() => {
+            coin.innerHTML = Math.round(Math.random()) ? "Heads" : "Tails";
+            coin.style = "opacity: 1;"
+        }, 250)
+        
+    }
+</script>
+</html>

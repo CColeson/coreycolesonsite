@@ -209,6 +209,21 @@ h1 {
     border-left: 2.1rem solid #0d0d0d;
 }
 
+#tools-link {
+    text-align: center;
+    opacity: 0; 
+    transition: 0.3s;
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+    background-color: #BFBFBF;
+    padding: 0.3rem;
+}
+
+#tools-link:hover {
+    opacity: 1;
+}
+
 @media only screen and (max-width: 720px) {
     .name {
         font-size: 2.3rem;

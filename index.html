@@ -8,7 +8,7 @@
     <title>Corey Coleson</title>
     <meta name="viewport" content="user-scalable=0, width=device-width, initial-scale=1.0" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="styles/site.css">
 </head>
 
 <body>
@@ -32,9 +32,7 @@
                 <h4 class="js-button-text" style="display: none;">Home</h4>
             </div>
         </div>
-
     </div>
-
 
     <div class="page-layout" id="home">
         <div class="side-button left" onclick="homeToAbout()">
@@ -61,7 +59,11 @@
                     </a>
                 </div>
             </div>
-            <h4 style="margin-bottom: 3rem;" id="navigation-text">To navigate: Click the left, or right edges of the page!<!-- Otherwise, just scroll!--></h4>
+            <div style="width: 100%;">
+                <h4 id="navigation-text">To navigate: Click the left, or right edges of the page!<!-- Otherwise, just scroll!--></h4>
+                <div id="tools-link" onclick="window.location = 'tools.html'">Tools!</div>
+            </div>
+            
 
         </div>
 

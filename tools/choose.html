@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/site.css">
+    <link rel="stylesheet" href="../styles/tools.css">
+    <title>Choose an item from a list!</title>
+</head>
+<style>
+    #coin {
+        margin-top: 1rem;
+    }
+</style> 
+<body>
+    <h1>Choose from list!</h1>
+    <div style="display: flex; justify-content: space-between;">
+      <h3>Type your list items seperated by a line break</h3>
+      <!-- <div style="display: flex; gap: 1rem;">
+        <h3>Override seperator:</h3>
+        <select id="seperator">
+            <option value="\n" selected>line break</option>
+            <option value=",">comma</option>
+            <option value=".">period</option>
+            <option value=" ">space</option>
+            <option value="-">dash</option>
+        </select>
+      </div>   -->
+    </div>
+    
+    <textarea cols="30" rows="10"></textarea>
+    <h1 id="coin"></h1>
+    <span class="tool-card" onclick="choose();" style="width: 10%; margin-top: 1rem; text-align: center;">Choose!</span>
+</body>
+<script>
+    function choose() {
+        let items = document.querySelector("textarea").value.split("\n").filter(x => /\S/.test(x));
+        let coin = document.getElementById("coin")
+        coin.style = "opacity: 0"
+        window.setTimeout(() => {
+            coin.innerHTML = items[Math.floor(Math.random()*items.length)];
+            coin.style = "opacity: 1;"
+        }, 250)
+    }
+</script>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/site.css">
+    <link rel="stylesheet" href="../styles/tools.css">
+    <title>Group items from a list!</title>
+</head>
+<style>
+    #coin {
+        margin-top: 1rem;
+    }
+
+    .group {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 0.3rem;
+        padding: 1rem;
+        border: solid black 1px;
+        border-radius: 4px;
+    }
+
+    .tool-card {
+        max-height: 2rem;
+    }
+
+    input {
+        max-height: 1rem;
+        align-self: center;
+    }
+</style> 
+<body>
+    <h1>Group items randomly from a list!</h1>
+    <div style="display: flex; justify-content: space-between;">
+      <h3>Type your list items seperated by a line break</h3>
+    </div>
+
+    <!-- <div style="display: flex">
+        <p>Number of groups: </p>
+        <input id="number-of-groups" type="number" />
+    </div> -->
+
+    <div style="display: flex">
+        <p>Items per group: </p>
+        <input id="items-per-group" type="number" />
+    </div>
+    
+    <textarea cols="30" rows="10"></textarea>
+    <br>
+    <div id="group-list" style="display: flex; flex-wrap: wrap; gap: 4px; max-width: 100%; height: auto;"></div>
+    <span class="tool-card" onclick="choose();" style="width: 10%; margin-top: 1rem; text-align: center;">Make Groups!</span>
+
+</body>
+<script>
+    function choose() {
+        let groupItemVal = document.getElementById("items-per-group").value;
+        const groupList = document.getElementById("group-list");
+        const groupItems = groupItemVal ? groupItemVal : 0;
+        const items = document.querySelector("textarea").value.split("\n").filter(x => /\S/.test(x));
+        const groups = []
+        groupList.innerHTML = "";
+        while (items.length > 1) {
+            const group = []
+            for (let i=0;i<groupItems; i++) {
+                const item = items[Math.floor(Math.random()*items.length)]
+                if (!item)
+                    break
+                group.push(item)
+                items.splice(groups.indexOf(item), 1);
+            }
+            groups.push(group)
+        }
+        if (items.length) {
+            groups.push([items[0]])
+        }
+        groups.forEach(group => {
+            const groupDiv = document.createElement("div");
+            groupDiv.classList = "group";
+            group.forEach(item => {
+                const itemDiv = document.createElement("div");
+                itemDiv.classList = "tool-card"
+                itemDiv.innerText = item;
+                groupDiv.appendChild(itemDiv)
+            });
+            groupList.appendChild(groupDiv);
+        })
+    }
+</script>
+</html>
